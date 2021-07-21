@@ -213,7 +213,7 @@ class EventsControler:
         while True:
             data: bytes = await r.read(4028)
 
-            if not data: #SE DATA FOR NONE, Significa que o client deu CTRL + C ou saiu forçadamente.
+            if not data: #SE DATA FOR NONE (empty object bytes), Significa que o client deu CTRL + C ou saiu forçadamente.
                 await self.client_left(r)
                 break
 
